@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOT.Web", "IOT.Web\IOT.Web.csproj", "{C83328DB-09A2-4370-B31C-CEFFFD8F57E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOT.Philips.WebAPI", "IOT.Philips.WebAPI\IOT.Philips.WebAPI.csproj", "{8332FE00-F5F0-46AF-AE51-2C8F7B78EF4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOT.Model", "IOT.Model\IOT.Model.csproj", "{768E5EEC-E9B5-4EAE-972F-1EA215218A11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOT.common", "IOT.common\IOT.common.csproj", "{CB90D941-319A-4373-97D0-0DBC61A7D979}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOT.Repository", "IOT.Repository\IOT.Repository.csproj", "{2D9E9147-5985-47B7-8C37-E3FC5B3B7827}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOT.Wink.WebAPI", "IOT.Wink.WebAPI\IOT.Wink.WebAPI.csproj", "{E67C9ED7-CBE3-4412-A4D1-B4FF30CE6308}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C83328DB-09A2-4370-B31C-CEFFFD8F57E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C83328DB-09A2-4370-B31C-CEFFFD8F57E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C83328DB-09A2-4370-B31C-CEFFFD8F57E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C83328DB-09A2-4370-B31C-CEFFFD8F57E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8332FE00-F5F0-46AF-AE51-2C8F7B78EF4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8332FE00-F5F0-46AF-AE51-2C8F7B78EF4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8332FE00-F5F0-46AF-AE51-2C8F7B78EF4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8332FE00-F5F0-46AF-AE51-2C8F7B78EF4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{768E5EEC-E9B5-4EAE-972F-1EA215218A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{768E5EEC-E9B5-4EAE-972F-1EA215218A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{768E5EEC-E9B5-4EAE-972F-1EA215218A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{768E5EEC-E9B5-4EAE-972F-1EA215218A11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB90D941-319A-4373-97D0-0DBC61A7D979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB90D941-319A-4373-97D0-0DBC61A7D979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB90D941-319A-4373-97D0-0DBC61A7D979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB90D941-319A-4373-97D0-0DBC61A7D979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D9E9147-5985-47B7-8C37-E3FC5B3B7827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D9E9147-5985-47B7-8C37-E3FC5B3B7827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D9E9147-5985-47B7-8C37-E3FC5B3B7827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D9E9147-5985-47B7-8C37-E3FC5B3B7827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E67C9ED7-CBE3-4412-A4D1-B4FF30CE6308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E67C9ED7-CBE3-4412-A4D1-B4FF30CE6308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E67C9ED7-CBE3-4412-A4D1-B4FF30CE6308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E67C9ED7-CBE3-4412-A4D1-B4FF30CE6308}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2760B2BB-25B7-48ED-A4AF-BF68BD05A582}
+	EndGlobalSection
+EndGlobal

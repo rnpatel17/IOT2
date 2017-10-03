@@ -1,0 +1,141 @@
+ IBridgeLocator locator = new HttpBridgeLocator();
+        ILocalHueClient client = new LocalHueClient("ip");
+        MainViewModel model = new MainViewModel();
+        HueClient hueClient;
+
+        [HttpGet]
+        public bool LightOnOff(string usename, int id, bool isOn)
+        {
+            var light = db.Light.Find(id);
+            var state = db.State.Find(light.StateId);
+
+            if (state != null)
+            {
+                if (isOn)
+                {
+                    state.On = false;
+                    db.SaveChanges();
+                    // model.TurnOffAction();
+
+                }
+                else
+                {
+                    state.On = true;
+                    db.SaveChanges();
+                    // model.TurnOnAction();
+                }
+                return state.On;
+            }
+            else
+            {
+                return false;
+            }
+            //model.GetLightsComman
+            //var command = new LightCommand();
+            //command.On = true;
+            //command.TurnOff();
+            //command.TurnOn();
+
+        }
+        //var appKey = await client.RegisterAsync("mypersonalappname", "mydevicename");
+        public async Task<string> RegisterApiAsync()
+        {
+
+            string appKey = await client.RegisterAsync("mypersonalappname", "mydevicename");
+            var bridgeIPs = await locator.LocateBridgesAsync(TimeSpan.FromSeconds(5));
+            client.Initialize("mypersonalappkey");
+          
+            return appKey;
+        }
+        [HttpGet]
+        public object GetAllLights(string username)
+        {
+            //var light= hueClient.GetLightAsync(username); 
+           
+            var light = new Model.Light
+            {
+                LuminaireUniqueId = "1",
+                ModelId = "test",
+                Name = "Test Light",
+                ManufacturerName = "Test Man",
+                ProductId = "abc-pqr",
+                SoftwareVersion = "V 1.0",
+                State = new Model.State
+                {
+                    Alert = Model.Alert.None,
+                    Brightness = new byte(),
+                    ColorCoordinates = new double[] { 10 },
+                    ColorMode = "testmode",
+                    ColorTemperature = 1,
+                    Effect = Model.Effect.None,
+                    Hue = 1,
+                    IsReachable = true,
+                    On = true,
+                    Saturation = 1,
+                    TransitionTime = new TimeSpan()
+                },
+                SwConfigId = "test sw",
+                Type = "test type",
+                UniqueId = "test unique"
+            };
+            db.Light.Add(light);
+            db.SaveChanges();
+            //url /api/<username>/lights
+            return light;
+        }
+
+        public object GetNewLights(string username)
+        {
+
+            var light = client.GetNewLightsAsync();
+            //model.get
+            //url /api/<username>/lights/new
+            foreach (var item in light.Result)
+            {
+                Model.Light l = new Model.Light();
+                l.LuminaireUniqueId = item.LuminaireUniqueId;
+                l.ManufacturerName = item.ManufacturerName;
+                l.Name = item.Name;
+                db.Light.Add(l);
+                db.SaveChanges();
+            }
+
+            return light;
+        }
+        public object SearchForNewLights(string username)
+        {
+            //url 
+            return null;// GetAllLights(username);
+        }
+        //public object GetLightAttributesAndState(string username, int id) // not found in Q42
+        //{
+        //    //var state=
+        //    //url /api/<username>/lights/<id>
+        //    return null;
+        //}
+        public object SetLightAttributes(string id,string name)
+        {
+            //url /api/<username>/lights/<id>
+          var nameAttr= hueClient.SetLightNameAsync(id, name);
+
+            return nameAttr;
+        }
+        //public object SetLightState(string username, int id) // not found in Q42
+        //{
+            
+        //    //url /api/<username>/lights/<id>/state
+        //    return null;
+        //}
+        public object DeleteLights(string username, int id)
+        {
+            //url /api/<username>/lights/<id>
+           var lightDelete= client.DeleteLightAsync(username);
+            var light = db.Light.Find(id);
+            if (light!=null)
+            {
+                //db.Entry(light).State = System.Data.Entity.EntityState.Deleted;
+                db.Light.Remove(light);
+                db.SaveChanges();
+            }
+            return light;
+        }
